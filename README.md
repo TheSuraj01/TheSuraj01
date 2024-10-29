@@ -1,4 +1,5 @@
 [![MasterHead](Poster.png)](Poster.png)
+[![MasterHead]()]()
 
 <h1 align="center">Hey there! 👋 I'm Suraj Kumar Yadav</h1>
 <h3 align="center">Passionate Polymath: Crafting Impactful Tech with Creativity and Versatility</h3>
@@ -8,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://instagram.com/surajkumaryadav.in" target="blank"><img src="https://img.shields.io/instagram/follow/surajkumaryadav.in?logo=instagram&style=for-the-badge" alt="surajkumaryadav.in" /></a>
+  <a href="https://twitter.com/surajraizada6" target="blank"><img src="https://img.shields.io/twitter/follow/surajraizada6?logo=twitter&style=for-the-badge" alt="surajraizada6" /></a>
   <a href="https://linkedin.com/in/surajyadav01" target="blank"><img src="https://img.shields.io/badge/-LinkedIn-blue?style=for-the-badge&logo=Linkedin&logoColor=white" alt="surajyadav01" /></a>
 </p>
 
