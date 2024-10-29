@@ -1,5 +1,4 @@
 [![MasterHead](Poster.png)](Poster.png)
-[![MasterHead]()]()
 
 <h1 align="center">Hey there! 👋 I'm Suraj Kumar Yadav</h1>
 <h3 align="center">Passionate Polymath: Crafting Impactful Tech with Creativity and Versatility</h3>
