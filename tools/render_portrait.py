@@ -68,33 +68,52 @@ def build_portrait_svg(ascii_rows, output_path="portrait.svg"):
     total_height = content_height + header_height + (padding_y * 2)
 
     # Accent colors
-    bg_color = "#0D1117"
-    border_color = "#30363D"
-    text_color = "#38BDF8"  # Vibrant cyan accent
-    header_text_color = "#8B949E"
+    bg_color = "#050510"
+    border_color = "#9d4edd"
+    text_color = "#00f3ff"  # Neon cyan
+    header_text_color = "#f000ff"
+    grid_color = "#1a103c"
     
     svg_lines = [
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {total_width} {total_height}" width="{total_width}" height="{total_height}">',
         '  <defs>',
+        '    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">',
+        '      <feGaussianBlur stdDeviation="2" result="blur" />',
+        '      <feMerge>',
+        '        <feMergeNode in="blur" />',
+        '        <feMergeNode in="SourceGraphic" />',
+        '      </feMerge>',
+        '    </filter>',
+        '    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">',
+        '      <rect width="4" height="2" fill="#000" fill-opacity="0.2" />',
+        '    </pattern>',
         '    <style>',
         '      @keyframes fadeInRow {',
-        '        0% { opacity: 0; transform: translateY(-3px); }',
-        '        100% { opacity: 1; transform: translateY(0); }',
+        '        0% { opacity: 0; transform: translateY(-3px) scale(0.98); }',
+        '        100% { opacity: 1; transform: translateY(0) scale(1); }',
         '      }',
-        '      .ascii-text { font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace; font-size: 11px; font-weight: 600; fill: ' + text_color + '; white-space: pre; }',
-        '      .header-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 12px; font-weight: 500; fill: ' + header_text_color + '; }',
+        '      @keyframes glitch {',
+        '        0% { transform: translate(0) }',
+        '        20% { transform: translate(-2px, 1px) }',
+        '        40% { transform: translate(-1px, -1px) }',
+        '        60% { transform: translate(2px, 1px) }',
+        '        80% { transform: translate(1px, -1px) }',
+        '        100% { transform: translate(0) }',
+        '      }',
+        '      .ascii-text { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 11px; font-weight: 700; fill: ' + text_color + '; white-space: pre; filter: url(#neonGlow); }',
+        '      .header-title { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 12px; font-weight: 700; fill: ' + header_text_color + '; letter-spacing: 1px; filter: url(#neonGlow); }',
         '    </style>',
         '  </defs>',
         '',
-        '  <!-- Outer Terminal Window Frame -->',
-        f'  <rect x="0" y="0" width="{total_width}" height="{total_height}" rx="10" ry="10" fill="{bg_color}" stroke="{border_color}" stroke-width="1.5" />',
+        '  <!-- Cyberpunk Window Frame -->',
+        f'  <rect x="0" y="0" width="{total_width}" height="{total_height}" rx="4" ry="4" fill="{bg_color}" stroke="{border_color}" stroke-width="2" filter="url(#neonGlow)" />',
+        f'  <rect x="0" y="0" width="{total_width}" height="{total_height}" rx="4" ry="4" fill="url(#scanlines)" />',
         '',
-        '  <!-- Window Controls -->',
-        f'  <circle cx="20" cy="18" r="5" fill="#FF5F56" />',
-        f'  <circle cx="36" cy="18" r="5" fill="#FFBD2E" />',
-        f'  <circle cx="52" cy="18" r="5" fill="#27C93F" />',
-        f'  <text x="{total_width / 2}" y="22" text-anchor="middle" class="header-title">portrait.ascii</text>',
-        f'  <line x1="0" y1="{header_height}" x2="{total_width}" y2="{header_height}" stroke="{border_color}" stroke-width="1" />',
+        '  <!-- HUD Controls -->',
+        f'  <path d="M 15 12 L 25 12 L 30 18 L 40 18" stroke="{text_color}" stroke-width="2" fill="none" filter="url(#neonGlow)" />',
+        f'  <path d="M {total_width - 40} 18 L {total_width - 30} 18 L {total_width - 25} 12 L {total_width - 15} 12" stroke="{header_text_color}" stroke-width="2" fill="none" filter="url(#neonGlow)" />',
+        f'  <text x="{total_width / 2}" y="22" text-anchor="middle" class="header-title" style="animation: glitch 4s infinite;">TARGET_IDENT :: VERIFIED</text>',
+        f'  <line x1="0" y1="{header_height}" x2="{total_width}" y2="{header_height}" stroke="{border_color}" stroke-width="1" stroke-dasharray="4 2" />',
         '',
         '  <!-- Animated ASCII Content -->',
         f'  <g transform="translate({padding_x}, {header_height + padding_y})">'

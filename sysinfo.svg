@@ -1,5 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 292" width="460" height="292">
   <defs>
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <pattern id="hexGrid" width="10" height="17.32" patternUnits="userSpaceOnUse" patternTransform="scale(0.5)">
+      <path d="M5 0 L10 2.88 L10 8.66 L5 11.54 L0 8.66 L0 2.88 Z" fill="none" stroke="#1a103c" stroke-width="1"/>
+    </pattern>
     <style>
       @keyframes rowFadeIn {
         0% { opacity: 0; transform: translateX(-6px); }
@@ -9,65 +19,73 @@
         0%, 100% { opacity: 1; }
         50% { opacity: 0; }
       }
-      .term-header { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 12px; font-weight: 500; fill: #8B949E; }
+      @keyframes glitch {
+        0% { transform: translate(0) }
+        20% { transform: translate(-2px, 1px) }
+        40% { transform: translate(-1px, -1px) }
+        60% { transform: translate(2px, 1px) }
+        80% { transform: translate(1px, -1px) }
+        100% { transform: translate(0) }
+      }
+      .term-header { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 11px; font-weight: 700; fill: #f000ff; letter-spacing: 1px; }
       .term-code { font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace; font-size: 12px; }
-      .key-text { fill: #8B949E; font-weight: 500; }
-      .val-text { fill: #C9D1D9; font-weight: 600; }
-      .accent-text { fill: #38BDF8; font-weight: 600; }
-      .prompt-symbol { fill: #27C93F; font-weight: 700; }
+      .key-text { fill: #00f3ff; font-weight: 600; filter: url(#neonGlow); }
+      .val-text { fill: #e2e8f0; font-weight: 500; }
+      .accent-text { fill: #f000ff; font-weight: 600; filter: url(#neonGlow); }
+      .prompt-symbol { fill: #00ff66; font-weight: 700; filter: url(#neonGlow); }
     </style>
   </defs>
 
-  <!-- Terminal Frame -->
-  <rect x="0" y="0" width="460" height="292" rx="10" ry="10" fill="#0D1117" stroke="#30363D" stroke-width="1.5" />
+  <!-- Cyberpunk Frame -->
+  <rect x="0" y="0" width="460" height="292" rx="4" ry="4" fill="#050510" stroke="#9d4edd" stroke-width="2" filter="url(#neonGlow)" />
+  <rect x="0" y="0" width="460" height="292" rx="4" ry="4" fill="url(#hexGrid)" />
 
-  <!-- Window Control Buttons -->
-  <circle cx="20" cy="18" r="5" fill="#FF5F56" />
-  <circle cx="36" cy="18" r="5" fill="#FFBD2E" />
-  <circle cx="52" cy="18" r="5" fill="#27C93F" />
-  <text x="230.0" y="22" text-anchor="middle" class="term-header">sysinfo --verbose</text>
-  <line x1="0" y1="36" x2="460" y2="36" stroke="#30363D" stroke-width="1" />
+  <!-- HUD Controls -->
+  <path d="M 15 12 L 25 12 L 30 18 L 40 18" stroke="#f000ff" stroke-width="2" fill="none" filter="url(#neonGlow)" />
+  <path d="M 420 18 L 430 18 L 435 12 L 445 12" stroke="#00f3ff" stroke-width="2" fill="none" filter="url(#neonGlow)" />
+  <text x="230.0" y="22" text-anchor="middle" class="term-header" style="animation: glitch 4s infinite;">// SECURE_UPLINK : ESTABLISHED</text>
+  <line x1="0" y1="36" x2="460" y2="36" stroke="#9d4edd" stroke-width="1" stroke-dasharray="4 2" />
 
   <g transform="translate(20, 56)">
     <g transform="translate(0, 12)" opacity="0" style="animation: rowFadeIn 0.35s ease-out 0.0s forwards;">
-      <text x="0" y="0" class="term-code prompt-symbol">&#x276F;</text>
+      <text x="0" y="0" class="term-code prompt-symbol">&gt;</text>
       <text x="16" y="0" class="term-code key-text">user:</text>
       <text x="96" y="0" class="term-code val-text">thesuraj01 (Suraj Kumar Yadav)</text>
     </g>
     <g transform="translate(0, 40)" opacity="0" style="animation: rowFadeIn 0.35s ease-out 0.15s forwards;">
-      <text x="0" y="0" class="term-code prompt-symbol">&#x276F;</text>
+      <text x="0" y="0" class="term-code prompt-symbol">&gt;</text>
       <text x="16" y="0" class="term-code key-text">role:</text>
       <text x="96" y="0" class="term-code accent-text">Software Engineer @ Spotline, Inc.</text>
     </g>
     <g transform="translate(0, 68)" opacity="0" style="animation: rowFadeIn 0.35s ease-out 0.3s forwards;">
-      <text x="0" y="0" class="term-code prompt-symbol">&#x276F;</text>
+      <text x="0" y="0" class="term-code prompt-symbol">&gt;</text>
       <text x="16" y="0" class="term-code key-text">focus:</text>
       <text x="96" y="0" class="term-code val-text">AI &amp; ML · Systems Architecture</text>
     </g>
     <g transform="translate(0, 96)" opacity="0" style="animation: rowFadeIn 0.35s ease-out 0.45s forwards;">
-      <text x="0" y="0" class="term-code prompt-symbol">&#x276F;</text>
+      <text x="0" y="0" class="term-code prompt-symbol">&gt;</text>
       <text x="16" y="0" class="term-code key-text">stack:</text>
       <text x="96" y="0" class="term-code val-text">Python · TypeScript · React · Next.js · Go · Rust</text>
     </g>
     <g transform="translate(0, 124)" opacity="0" style="animation: rowFadeIn 0.35s ease-out 0.6s forwards;">
-      <text x="0" y="0" class="term-code prompt-symbol">&#x276F;</text>
+      <text x="0" y="0" class="term-code prompt-symbol">&gt;</text>
       <text x="16" y="0" class="term-code key-text">now:</text>
       <text x="96" y="0" class="term-code accent-text">Building Agentic-RAG &amp; Multi-Agent Systems</text>
     </g>
     <g transform="translate(0, 152)" opacity="0" style="animation: rowFadeIn 0.35s ease-out 0.75s forwards;">
-      <text x="0" y="0" class="term-code prompt-symbol">&#x276F;</text>
+      <text x="0" y="0" class="term-code prompt-symbol">&gt;</text>
       <text x="16" y="0" class="term-code key-text">location:</text>
       <text x="96" y="0" class="term-code val-text">India</text>
     </g>
     <g transform="translate(0, 180)" opacity="0" style="animation: rowFadeIn 0.35s ease-out 0.9s forwards;">
-      <text x="0" y="0" class="term-code prompt-symbol">&#x276F;</text>
+      <text x="0" y="0" class="term-code prompt-symbol">&gt;</text>
       <text x="16" y="0" class="term-code key-text">links:</text>
       <text x="96" y="0" class="term-code val-text">surajkumaryadavin.vercel.app · github.com/thesuraj01</text>
     </g>
     <g transform="translate(0, 208)" opacity="0" style="animation: rowFadeIn 0.35s ease-out 1.05s forwards;">
-      <text x="0" y="0" class="term-code prompt-symbol">&#x276F;</text>
+      <text x="0" y="0" class="term-code prompt-symbol">&gt;</text>
       <text x="16" y="0" class="term-code val-text">status: active</text>
-      <rect x="116" y="-10" width="7" height="13" fill="#38BDF8" style="animation: cursorBlink 1s infinite;" />
+      <rect x="116" y="-10" width="7" height="13" fill="#f000ff" style="animation: cursorBlink 1s infinite;" filter="url(#neonGlow)" />
     </g>
   </g>
 </svg>

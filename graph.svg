@@ -1,518 +1,531 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 922 224" width="922" height="224">
   <defs>
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
     <style>
       @keyframes fadeInWave {
         0% { opacity: 0; transform: translateY(4px); }
         100% { opacity: 1; transform: translateY(0); }
       }
-      .text-font { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; fill: #8B949E; }
-      .text-bold { font-weight: 600; fill: #C9D1D9; }
-      .header-title { font-size: 12px; font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace; font-weight: 500; fill: #8B949E; }
-      .day-label { font-size: 9px; fill: #8B949E; }
-      .month-label { font-size: 10px; fill: #8B949E; }
+      @keyframes glitch {
+        0% { transform: translate(0) }
+        20% { transform: translate(-2px, 1px) }
+        40% { transform: translate(-1px, -1px) }
+        60% { transform: translate(2px, 1px) }
+        80% { transform: translate(1px, -1px) }
+        100% { transform: translate(0) }
+      }
+      .text-font { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 11px; fill: #00f3ff; }
+      .text-bold { font-weight: 700; fill: #f000ff; }
+      .header-title { font-size: 12px; font-family: "JetBrains Mono", "Fira Code", monospace; font-weight: 700; fill: #f000ff; letter-spacing: 1px; }
+      .day-label { font-size: 9px; fill: #00f3ff; font-family: monospace; }
     </style>
   </defs>
 
-  <!-- Terminal Frame -->
-  <rect x="0" y="0" width="922" height="224" rx="10" ry="10" fill="#0D1117" stroke="#30363D" stroke-width="1.5" />
+  <!-- Cyberpunk Frame -->
+  <rect x="0" y="0" width="922" height="224" rx="4" ry="4" fill="#050510" stroke="#9d4edd" stroke-width="2" filter="url(#neonGlow)" />
 
-  <!-- Window Control Buttons -->
-  <circle cx="20" cy="18" r="5" fill="#FF5F56" />
-  <circle cx="36" cy="18" r="5" fill="#FFBD2E" />
-  <circle cx="52" cy="18" r="5" fill="#27C93F" />
-  <text x="461.0" y="22" text-anchor="middle" class="header-title">$ cat contributions.log</text>
-  <line x1="0" y1="36" x2="922" y2="36" stroke="#30363D" stroke-width="1" />
+  <!-- HUD Controls -->
+  <path d="M 15 12 L 25 12 L 30 18 L 40 18" stroke="#f000ff" stroke-width="2" fill="none" filter="url(#neonGlow)" />
+  <path d="M 882 18 L 892 18 L 897 12 L 907 12" stroke="#00f3ff" stroke-width="2" fill="none" filter="url(#neonGlow)" />
+  <text x="461.0" y="22" text-anchor="middle" class="header-title" style="animation: glitch 3s infinite;">[ SYS :: UPLINK_DATA :: CONTRIBUTIONS ]</text>
+  <line x1="0" y1="36" x2="922" y2="36" stroke="#9d4edd" stroke-width="1" stroke-dasharray="4 2" />
 
   <g transform="translate(24, 56)">
     <!-- Day Labels -->
-    <text x="0" y="26" class="day-label">Mon</text>
-    <text x="0" y="58" class="day-label">Wed</text>
-    <text x="0" y="90" class="day-label">Fri</text>
-    <g transform="translate(24, 0)">
+    <text x="0" y="26" class="day-label">MON</text>
+    <text x="0" y="58" class="day-label">WED</text>
+    <text x="0" y="90" class="day-label">FRI</text>
+    <g transform="translate(26, 0)">
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.0s forwards;">
-        <rect x="0" y="80" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>9 contributions on 2025-07-25</title></rect>
-        <rect x="0" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-07-26</title></rect>
+        <rect x="0" y="80" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>9 contributions on 2025-07-25</title></rect>
+        <rect x="0" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-07-26</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.03s forwards;">
-        <rect x="16" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-07-27</title></rect>
-        <rect x="16" y="16" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>9 contributions on 2025-07-28</title></rect>
-        <rect x="16" y="32" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-07-29</title></rect>
-        <rect x="16" y="48" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>1 contributions on 2025-07-30</title></rect>
-        <rect x="16" y="64" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>8 contributions on 2025-07-31</title></rect>
-        <rect x="16" y="80" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>4 contributions on 2025-08-01</title></rect>
-        <rect x="16" y="96" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>4 contributions on 2025-08-02</title></rect>
+        <rect x="16" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-07-27</title></rect>
+        <rect x="16" y="16" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>9 contributions on 2025-07-28</title></rect>
+        <rect x="16" y="32" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-07-29</title></rect>
+        <rect x="16" y="48" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>1 contributions on 2025-07-30</title></rect>
+        <rect x="16" y="64" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>8 contributions on 2025-07-31</title></rect>
+        <rect x="16" y="80" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>4 contributions on 2025-08-01</title></rect>
+        <rect x="16" y="96" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>4 contributions on 2025-08-02</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.06s forwards;">
-        <rect x="32" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-08-03</title></rect>
-        <rect x="32" y="16" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-08-04</title></rect>
-        <rect x="32" y="32" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>11 contributions on 2025-08-05</title></rect>
-        <rect x="32" y="48" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>7 contributions on 2025-08-06</title></rect>
-        <rect x="32" y="64" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-08-07</title></rect>
-        <rect x="32" y="80" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>10 contributions on 2025-08-08</title></rect>
-        <rect x="32" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-08-09</title></rect>
+        <rect x="32" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-08-03</title></rect>
+        <rect x="32" y="16" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-08-04</title></rect>
+        <rect x="32" y="32" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>11 contributions on 2025-08-05</title></rect>
+        <rect x="32" y="48" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>7 contributions on 2025-08-06</title></rect>
+        <rect x="32" y="64" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-08-07</title></rect>
+        <rect x="32" y="80" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>10 contributions on 2025-08-08</title></rect>
+        <rect x="32" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-08-09</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.09s forwards;">
-        <rect x="48" y="0" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>5 contributions on 2025-08-10</title></rect>
-        <rect x="48" y="16" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>10 contributions on 2025-08-11</title></rect>
-        <rect x="48" y="32" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>6 contributions on 2025-08-12</title></rect>
-        <rect x="48" y="48" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-08-13</title></rect>
-        <rect x="48" y="64" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>9 contributions on 2025-08-14</title></rect>
-        <rect x="48" y="80" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>5 contributions on 2025-08-15</title></rect>
-        <rect x="48" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-08-16</title></rect>
+        <rect x="48" y="0" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>5 contributions on 2025-08-10</title></rect>
+        <rect x="48" y="16" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>10 contributions on 2025-08-11</title></rect>
+        <rect x="48" y="32" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>6 contributions on 2025-08-12</title></rect>
+        <rect x="48" y="48" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-08-13</title></rect>
+        <rect x="48" y="64" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>9 contributions on 2025-08-14</title></rect>
+        <rect x="48" y="80" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>5 contributions on 2025-08-15</title></rect>
+        <rect x="48" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-08-16</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.12s forwards;">
-        <rect x="64" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-08-17</title></rect>
-        <rect x="64" y="16" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>5 contributions on 2025-08-18</title></rect>
-        <rect x="64" y="32" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-08-19</title></rect>
-        <rect x="64" y="48" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>8 contributions on 2025-08-20</title></rect>
-        <rect x="64" y="64" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>4 contributions on 2025-08-21</title></rect>
-        <rect x="64" y="80" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>11 contributions on 2025-08-22</title></rect>
-        <rect x="64" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-08-23</title></rect>
+        <rect x="64" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-08-17</title></rect>
+        <rect x="64" y="16" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>5 contributions on 2025-08-18</title></rect>
+        <rect x="64" y="32" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-08-19</title></rect>
+        <rect x="64" y="48" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>8 contributions on 2025-08-20</title></rect>
+        <rect x="64" y="64" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>4 contributions on 2025-08-21</title></rect>
+        <rect x="64" y="80" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>11 contributions on 2025-08-22</title></rect>
+        <rect x="64" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-08-23</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.15s forwards;">
-        <rect x="80" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-08-24</title></rect>
-        <rect x="80" y="16" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-08-25</title></rect>
-        <rect x="80" y="32" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>7 contributions on 2025-08-26</title></rect>
-        <rect x="80" y="48" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>3 contributions on 2025-08-27</title></rect>
-        <rect x="80" y="64" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-08-28</title></rect>
-        <rect x="80" y="80" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>6 contributions on 2025-08-29</title></rect>
-        <rect x="80" y="96" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>5 contributions on 2025-08-30</title></rect>
+        <rect x="80" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-08-24</title></rect>
+        <rect x="80" y="16" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-08-25</title></rect>
+        <rect x="80" y="32" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>7 contributions on 2025-08-26</title></rect>
+        <rect x="80" y="48" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>3 contributions on 2025-08-27</title></rect>
+        <rect x="80" y="64" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-08-28</title></rect>
+        <rect x="80" y="80" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>6 contributions on 2025-08-29</title></rect>
+        <rect x="80" y="96" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>5 contributions on 2025-08-30</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.18s forwards;">
-        <rect x="96" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-08-31</title></rect>
-        <rect x="96" y="16" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>6 contributions on 2025-09-01</title></rect>
-        <rect x="96" y="32" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>2 contributions on 2025-09-02</title></rect>
-        <rect x="96" y="48" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-09-03</title></rect>
-        <rect x="96" y="64" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>5 contributions on 2025-09-04</title></rect>
-        <rect x="96" y="80" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>1 contributions on 2025-09-05</title></rect>
-        <rect x="96" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-09-06</title></rect>
+        <rect x="96" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-08-31</title></rect>
+        <rect x="96" y="16" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>6 contributions on 2025-09-01</title></rect>
+        <rect x="96" y="32" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>2 contributions on 2025-09-02</title></rect>
+        <rect x="96" y="48" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-09-03</title></rect>
+        <rect x="96" y="64" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>5 contributions on 2025-09-04</title></rect>
+        <rect x="96" y="80" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>1 contributions on 2025-09-05</title></rect>
+        <rect x="96" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-09-06</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.21s forwards;">
-        <rect x="112" y="0" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>1 contributions on 2025-09-07</title></rect>
-        <rect x="112" y="16" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>1 contributions on 2025-09-08</title></rect>
-        <rect x="112" y="32" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-09-09</title></rect>
-        <rect x="112" y="48" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>4 contributions on 2025-09-10</title></rect>
-        <rect x="112" y="64" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>11 contributions on 2025-09-11</title></rect>
-        <rect x="112" y="80" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>7 contributions on 2025-09-12</title></rect>
-        <rect x="112" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-09-13</title></rect>
+        <rect x="112" y="0" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>1 contributions on 2025-09-07</title></rect>
+        <rect x="112" y="16" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>1 contributions on 2025-09-08</title></rect>
+        <rect x="112" y="32" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-09-09</title></rect>
+        <rect x="112" y="48" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>4 contributions on 2025-09-10</title></rect>
+        <rect x="112" y="64" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>11 contributions on 2025-09-11</title></rect>
+        <rect x="112" y="80" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>7 contributions on 2025-09-12</title></rect>
+        <rect x="112" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-09-13</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.24s forwards;">
-        <rect x="128" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-09-14</title></rect>
-        <rect x="128" y="16" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-09-15</title></rect>
-        <rect x="128" y="32" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>3 contributions on 2025-09-16</title></rect>
-        <rect x="128" y="48" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>10 contributions on 2025-09-17</title></rect>
-        <rect x="128" y="64" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-09-18</title></rect>
-        <rect x="128" y="80" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>2 contributions on 2025-09-19</title></rect>
-        <rect x="128" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-09-20</title></rect>
+        <rect x="128" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-09-14</title></rect>
+        <rect x="128" y="16" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-09-15</title></rect>
+        <rect x="128" y="32" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>3 contributions on 2025-09-16</title></rect>
+        <rect x="128" y="48" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>10 contributions on 2025-09-17</title></rect>
+        <rect x="128" y="64" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-09-18</title></rect>
+        <rect x="128" y="80" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>2 contributions on 2025-09-19</title></rect>
+        <rect x="128" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-09-20</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.27s forwards;">
-        <rect x="144" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-09-21</title></rect>
-        <rect x="144" y="16" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>2 contributions on 2025-09-22</title></rect>
-        <rect x="144" y="32" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>9 contributions on 2025-09-23</title></rect>
-        <rect x="144" y="48" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-09-24</title></rect>
-        <rect x="144" y="64" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>1 contributions on 2025-09-25</title></rect>
-        <rect x="144" y="80" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>8 contributions on 2025-09-26</title></rect>
-        <rect x="144" y="96" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>1 contributions on 2025-09-27</title></rect>
+        <rect x="144" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-09-21</title></rect>
+        <rect x="144" y="16" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>2 contributions on 2025-09-22</title></rect>
+        <rect x="144" y="32" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>9 contributions on 2025-09-23</title></rect>
+        <rect x="144" y="48" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-09-24</title></rect>
+        <rect x="144" y="64" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>1 contributions on 2025-09-25</title></rect>
+        <rect x="144" y="80" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>8 contributions on 2025-09-26</title></rect>
+        <rect x="144" y="96" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>1 contributions on 2025-09-27</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.3s forwards;">
-        <rect x="160" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-09-28</title></rect>
-        <rect x="160" y="16" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>8 contributions on 2025-09-29</title></rect>
-        <rect x="160" y="32" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-09-30</title></rect>
-        <rect x="160" y="48" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>11 contributions on 2025-10-01</title></rect>
-        <rect x="160" y="64" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>7 contributions on 2025-10-02</title></rect>
-        <rect x="160" y="80" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>3 contributions on 2025-10-03</title></rect>
-        <rect x="160" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-10-04</title></rect>
+        <rect x="160" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-09-28</title></rect>
+        <rect x="160" y="16" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>8 contributions on 2025-09-29</title></rect>
+        <rect x="160" y="32" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-09-30</title></rect>
+        <rect x="160" y="48" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>11 contributions on 2025-10-01</title></rect>
+        <rect x="160" y="64" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>7 contributions on 2025-10-02</title></rect>
+        <rect x="160" y="80" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>3 contributions on 2025-10-03</title></rect>
+        <rect x="160" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-10-04</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.32999999999999996s forwards;">
-        <rect x="176" y="0" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>2 contributions on 2025-10-05</title></rect>
-        <rect x="176" y="16" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-10-06</title></rect>
-        <rect x="176" y="32" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>10 contributions on 2025-10-07</title></rect>
-        <rect x="176" y="48" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>6 contributions on 2025-10-08</title></rect>
-        <rect x="176" y="64" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-10-09</title></rect>
-        <rect x="176" y="80" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>9 contributions on 2025-10-10</title></rect>
-        <rect x="176" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-10-11</title></rect>
+        <rect x="176" y="0" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>2 contributions on 2025-10-05</title></rect>
+        <rect x="176" y="16" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-10-06</title></rect>
+        <rect x="176" y="32" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>10 contributions on 2025-10-07</title></rect>
+        <rect x="176" y="48" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>6 contributions on 2025-10-08</title></rect>
+        <rect x="176" y="64" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-10-09</title></rect>
+        <rect x="176" y="80" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>9 contributions on 2025-10-10</title></rect>
+        <rect x="176" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-10-11</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.36s forwards;">
-        <rect x="192" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-10-12</title></rect>
-        <rect x="192" y="16" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>9 contributions on 2025-10-13</title></rect>
-        <rect x="192" y="32" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>5 contributions on 2025-10-14</title></rect>
-        <rect x="192" y="48" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-10-15</title></rect>
-        <rect x="192" y="64" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>8 contributions on 2025-10-16</title></rect>
-        <rect x="192" y="80" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>4 contributions on 2025-10-17</title></rect>
-        <rect x="192" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-10-18</title></rect>
+        <rect x="192" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-10-12</title></rect>
+        <rect x="192" y="16" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>9 contributions on 2025-10-13</title></rect>
+        <rect x="192" y="32" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>5 contributions on 2025-10-14</title></rect>
+        <rect x="192" y="48" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-10-15</title></rect>
+        <rect x="192" y="64" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>8 contributions on 2025-10-16</title></rect>
+        <rect x="192" y="80" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>4 contributions on 2025-10-17</title></rect>
+        <rect x="192" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-10-18</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.39s forwards;">
-        <rect x="208" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-10-19</title></rect>
-        <rect x="208" y="16" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>4 contributions on 2025-10-20</title></rect>
-        <rect x="208" y="32" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-10-21</title></rect>
-        <rect x="208" y="48" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>7 contributions on 2025-10-22</title></rect>
-        <rect x="208" y="64" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>3 contributions on 2025-10-23</title></rect>
-        <rect x="208" y="80" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>10 contributions on 2025-10-24</title></rect>
-        <rect x="208" y="96" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>2 contributions on 2025-10-25</title></rect>
+        <rect x="208" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-10-19</title></rect>
+        <rect x="208" y="16" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>4 contributions on 2025-10-20</title></rect>
+        <rect x="208" y="32" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-10-21</title></rect>
+        <rect x="208" y="48" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>7 contributions on 2025-10-22</title></rect>
+        <rect x="208" y="64" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>3 contributions on 2025-10-23</title></rect>
+        <rect x="208" y="80" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>10 contributions on 2025-10-24</title></rect>
+        <rect x="208" y="96" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>2 contributions on 2025-10-25</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.42s forwards;">
-        <rect x="224" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-10-26</title></rect>
-        <rect x="224" y="16" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-10-27</title></rect>
-        <rect x="224" y="32" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>6 contributions on 2025-10-28</title></rect>
-        <rect x="224" y="48" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>2 contributions on 2025-10-29</title></rect>
-        <rect x="224" y="64" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-10-30</title></rect>
-        <rect x="224" y="80" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>5 contributions on 2025-10-31</title></rect>
-        <rect x="224" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-11-01</title></rect>
+        <rect x="224" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-10-26</title></rect>
+        <rect x="224" y="16" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-10-27</title></rect>
+        <rect x="224" y="32" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>6 contributions on 2025-10-28</title></rect>
+        <rect x="224" y="48" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>2 contributions on 2025-10-29</title></rect>
+        <rect x="224" y="64" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-10-30</title></rect>
+        <rect x="224" y="80" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>5 contributions on 2025-10-31</title></rect>
+        <rect x="224" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-11-01</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.44999999999999996s forwards;">
-        <rect x="240" y="0" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>3 contributions on 2025-11-02</title></rect>
-        <rect x="240" y="16" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>5 contributions on 2025-11-03</title></rect>
-        <rect x="240" y="32" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>1 contributions on 2025-11-04</title></rect>
-        <rect x="240" y="48" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-11-05</title></rect>
-        <rect x="240" y="64" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>4 contributions on 2025-11-06</title></rect>
-        <rect x="240" y="80" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>11 contributions on 2025-11-07</title></rect>
-        <rect x="240" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-11-08</title></rect>
+        <rect x="240" y="0" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>3 contributions on 2025-11-02</title></rect>
+        <rect x="240" y="16" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>5 contributions on 2025-11-03</title></rect>
+        <rect x="240" y="32" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>1 contributions on 2025-11-04</title></rect>
+        <rect x="240" y="48" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-11-05</title></rect>
+        <rect x="240" y="64" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>4 contributions on 2025-11-06</title></rect>
+        <rect x="240" y="80" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>11 contributions on 2025-11-07</title></rect>
+        <rect x="240" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-11-08</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.48s forwards;">
-        <rect x="256" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-11-09</title></rect>
-        <rect x="256" y="16" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>11 contributions on 2025-11-10</title></rect>
-        <rect x="256" y="32" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-11-11</title></rect>
-        <rect x="256" y="48" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>3 contributions on 2025-11-12</title></rect>
-        <rect x="256" y="64" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>10 contributions on 2025-11-13</title></rect>
-        <rect x="256" y="80" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>6 contributions on 2025-11-14</title></rect>
-        <rect x="256" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-11-15</title></rect>
+        <rect x="256" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-11-09</title></rect>
+        <rect x="256" y="16" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>11 contributions on 2025-11-10</title></rect>
+        <rect x="256" y="32" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-11-11</title></rect>
+        <rect x="256" y="48" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>3 contributions on 2025-11-12</title></rect>
+        <rect x="256" y="64" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>10 contributions on 2025-11-13</title></rect>
+        <rect x="256" y="80" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>6 contributions on 2025-11-14</title></rect>
+        <rect x="256" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-11-15</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.51s forwards;">
-        <rect x="272" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-11-16</title></rect>
-        <rect x="272" y="16" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-11-17</title></rect>
-        <rect x="272" y="32" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>2 contributions on 2025-11-18</title></rect>
-        <rect x="272" y="48" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>9 contributions on 2025-11-19</title></rect>
-        <rect x="272" y="64" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-11-20</title></rect>
-        <rect x="272" y="80" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>1 contributions on 2025-11-21</title></rect>
-        <rect x="272" y="96" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>3 contributions on 2025-11-22</title></rect>
+        <rect x="272" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-11-16</title></rect>
+        <rect x="272" y="16" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-11-17</title></rect>
+        <rect x="272" y="32" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>2 contributions on 2025-11-18</title></rect>
+        <rect x="272" y="48" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>9 contributions on 2025-11-19</title></rect>
+        <rect x="272" y="64" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-11-20</title></rect>
+        <rect x="272" y="80" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>1 contributions on 2025-11-21</title></rect>
+        <rect x="272" y="96" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>3 contributions on 2025-11-22</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.54s forwards;">
-        <rect x="288" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-11-23</title></rect>
-        <rect x="288" y="16" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>1 contributions on 2025-11-24</title></rect>
-        <rect x="288" y="32" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>8 contributions on 2025-11-25</title></rect>
-        <rect x="288" y="48" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-11-26</title></rect>
-        <rect x="288" y="64" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>11 contributions on 2025-11-27</title></rect>
-        <rect x="288" y="80" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>7 contributions on 2025-11-28</title></rect>
-        <rect x="288" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-11-29</title></rect>
+        <rect x="288" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-11-23</title></rect>
+        <rect x="288" y="16" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>1 contributions on 2025-11-24</title></rect>
+        <rect x="288" y="32" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>8 contributions on 2025-11-25</title></rect>
+        <rect x="288" y="48" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-11-26</title></rect>
+        <rect x="288" y="64" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>11 contributions on 2025-11-27</title></rect>
+        <rect x="288" y="80" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>7 contributions on 2025-11-28</title></rect>
+        <rect x="288" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-11-29</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.57s forwards;">
-        <rect x="304" y="0" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>4 contributions on 2025-11-30</title></rect>
-        <rect x="304" y="16" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>7 contributions on 2025-12-01</title></rect>
-        <rect x="304" y="32" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-12-02</title></rect>
-        <rect x="304" y="48" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>10 contributions on 2025-12-03</title></rect>
-        <rect x="304" y="64" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>6 contributions on 2025-12-04</title></rect>
-        <rect x="304" y="80" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>2 contributions on 2025-12-05</title></rect>
-        <rect x="304" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-12-06</title></rect>
+        <rect x="304" y="0" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>4 contributions on 2025-11-30</title></rect>
+        <rect x="304" y="16" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>7 contributions on 2025-12-01</title></rect>
+        <rect x="304" y="32" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-12-02</title></rect>
+        <rect x="304" y="48" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>10 contributions on 2025-12-03</title></rect>
+        <rect x="304" y="64" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>6 contributions on 2025-12-04</title></rect>
+        <rect x="304" y="80" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>2 contributions on 2025-12-05</title></rect>
+        <rect x="304" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-12-06</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.6s forwards;">
-        <rect x="320" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-12-07</title></rect>
-        <rect x="320" y="16" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-12-08</title></rect>
-        <rect x="320" y="32" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>9 contributions on 2025-12-09</title></rect>
-        <rect x="320" y="48" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>5 contributions on 2025-12-10</title></rect>
-        <rect x="320" y="64" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-12-11</title></rect>
-        <rect x="320" y="80" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>8 contributions on 2025-12-12</title></rect>
-        <rect x="320" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-12-13</title></rect>
+        <rect x="320" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-12-07</title></rect>
+        <rect x="320" y="16" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-12-08</title></rect>
+        <rect x="320" y="32" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>9 contributions on 2025-12-09</title></rect>
+        <rect x="320" y="48" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>5 contributions on 2025-12-10</title></rect>
+        <rect x="320" y="64" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-12-11</title></rect>
+        <rect x="320" y="80" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>8 contributions on 2025-12-12</title></rect>
+        <rect x="320" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-12-13</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.63s forwards;">
-        <rect x="336" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-12-14</title></rect>
-        <rect x="336" y="16" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>8 contributions on 2025-12-15</title></rect>
-        <rect x="336" y="32" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>4 contributions on 2025-12-16</title></rect>
-        <rect x="336" y="48" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-12-17</title></rect>
-        <rect x="336" y="64" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>7 contributions on 2025-12-18</title></rect>
-        <rect x="336" y="80" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>3 contributions on 2025-12-19</title></rect>
-        <rect x="336" y="96" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>4 contributions on 2025-12-20</title></rect>
+        <rect x="336" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-12-14</title></rect>
+        <rect x="336" y="16" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>8 contributions on 2025-12-15</title></rect>
+        <rect x="336" y="32" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>4 contributions on 2025-12-16</title></rect>
+        <rect x="336" y="48" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-12-17</title></rect>
+        <rect x="336" y="64" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>7 contributions on 2025-12-18</title></rect>
+        <rect x="336" y="80" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>3 contributions on 2025-12-19</title></rect>
+        <rect x="336" y="96" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>4 contributions on 2025-12-20</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.6599999999999999s forwards;">
-        <rect x="352" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-12-21</title></rect>
-        <rect x="352" y="16" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>3 contributions on 2025-12-22</title></rect>
-        <rect x="352" y="32" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-12-23</title></rect>
-        <rect x="352" y="48" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>6 contributions on 2025-12-24</title></rect>
-        <rect x="352" y="64" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>2 contributions on 2025-12-25</title></rect>
-        <rect x="352" y="80" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>9 contributions on 2025-12-26</title></rect>
-        <rect x="352" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-12-27</title></rect>
+        <rect x="352" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-12-21</title></rect>
+        <rect x="352" y="16" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>3 contributions on 2025-12-22</title></rect>
+        <rect x="352" y="32" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-12-23</title></rect>
+        <rect x="352" y="48" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>6 contributions on 2025-12-24</title></rect>
+        <rect x="352" y="64" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>2 contributions on 2025-12-25</title></rect>
+        <rect x="352" y="80" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>9 contributions on 2025-12-26</title></rect>
+        <rect x="352" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-12-27</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.69s forwards;">
-        <rect x="368" y="0" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>5 contributions on 2025-12-28</title></rect>
-        <rect x="368" y="16" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2025-12-29</title></rect>
-        <rect x="368" y="32" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>5 contributions on 2025-12-30</title></rect>
-        <rect x="368" y="48" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>1 contributions on 2025-12-31</title></rect>
-        <rect x="368" y="64" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-01-01</title></rect>
-        <rect x="368" y="80" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>4 contributions on 2026-01-02</title></rect>
-        <rect x="368" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-01-03</title></rect>
+        <rect x="368" y="0" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>5 contributions on 2025-12-28</title></rect>
+        <rect x="368" y="16" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2025-12-29</title></rect>
+        <rect x="368" y="32" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>5 contributions on 2025-12-30</title></rect>
+        <rect x="368" y="48" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>1 contributions on 2025-12-31</title></rect>
+        <rect x="368" y="64" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-01-01</title></rect>
+        <rect x="368" y="80" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>4 contributions on 2026-01-02</title></rect>
+        <rect x="368" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-01-03</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.72s forwards;">
-        <rect x="384" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-01-04</title></rect>
-        <rect x="384" y="16" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>4 contributions on 2026-01-05</title></rect>
-        <rect x="384" y="32" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>11 contributions on 2026-01-06</title></rect>
-        <rect x="384" y="48" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-01-07</title></rect>
-        <rect x="384" y="64" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>3 contributions on 2026-01-08</title></rect>
-        <rect x="384" y="80" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>10 contributions on 2026-01-09</title></rect>
-        <rect x="384" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-01-10</title></rect>
+        <rect x="384" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-01-04</title></rect>
+        <rect x="384" y="16" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>4 contributions on 2026-01-05</title></rect>
+        <rect x="384" y="32" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>11 contributions on 2026-01-06</title></rect>
+        <rect x="384" y="48" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-01-07</title></rect>
+        <rect x="384" y="64" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>3 contributions on 2026-01-08</title></rect>
+        <rect x="384" y="80" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>10 contributions on 2026-01-09</title></rect>
+        <rect x="384" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-01-10</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.75s forwards;">
-        <rect x="400" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-01-11</title></rect>
-        <rect x="400" y="16" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>10 contributions on 2026-01-12</title></rect>
-        <rect x="400" y="32" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-01-13</title></rect>
-        <rect x="400" y="48" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>2 contributions on 2026-01-14</title></rect>
-        <rect x="400" y="64" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>9 contributions on 2026-01-15</title></rect>
-        <rect x="400" y="80" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>5 contributions on 2026-01-16</title></rect>
-        <rect x="400" y="96" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>5 contributions on 2026-01-17</title></rect>
+        <rect x="400" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-01-11</title></rect>
+        <rect x="400" y="16" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>10 contributions on 2026-01-12</title></rect>
+        <rect x="400" y="32" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-01-13</title></rect>
+        <rect x="400" y="48" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>2 contributions on 2026-01-14</title></rect>
+        <rect x="400" y="64" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>9 contributions on 2026-01-15</title></rect>
+        <rect x="400" y="80" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>5 contributions on 2026-01-16</title></rect>
+        <rect x="400" y="96" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>5 contributions on 2026-01-17</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.78s forwards;">
-        <rect x="416" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-01-18</title></rect>
-        <rect x="416" y="16" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-01-19</title></rect>
-        <rect x="416" y="32" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>1 contributions on 2026-01-20</title></rect>
-        <rect x="416" y="48" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>8 contributions on 2026-01-21</title></rect>
-        <rect x="416" y="64" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-01-22</title></rect>
-        <rect x="416" y="80" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>11 contributions on 2026-01-23</title></rect>
-        <rect x="416" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-01-24</title></rect>
+        <rect x="416" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-01-18</title></rect>
+        <rect x="416" y="16" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-01-19</title></rect>
+        <rect x="416" y="32" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>1 contributions on 2026-01-20</title></rect>
+        <rect x="416" y="48" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>8 contributions on 2026-01-21</title></rect>
+        <rect x="416" y="64" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-01-22</title></rect>
+        <rect x="416" y="80" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>11 contributions on 2026-01-23</title></rect>
+        <rect x="416" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-01-24</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.8099999999999999s forwards;">
-        <rect x="432" y="0" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>1 contributions on 2026-01-25</title></rect>
-        <rect x="432" y="16" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>11 contributions on 2026-01-26</title></rect>
-        <rect x="432" y="32" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>7 contributions on 2026-01-27</title></rect>
-        <rect x="432" y="48" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-01-28</title></rect>
-        <rect x="432" y="64" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>10 contributions on 2026-01-29</title></rect>
-        <rect x="432" y="80" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>6 contributions on 2026-01-30</title></rect>
-        <rect x="432" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-01-31</title></rect>
+        <rect x="432" y="0" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>1 contributions on 2026-01-25</title></rect>
+        <rect x="432" y="16" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>11 contributions on 2026-01-26</title></rect>
+        <rect x="432" y="32" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>7 contributions on 2026-01-27</title></rect>
+        <rect x="432" y="48" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-01-28</title></rect>
+        <rect x="432" y="64" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>10 contributions on 2026-01-29</title></rect>
+        <rect x="432" y="80" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>6 contributions on 2026-01-30</title></rect>
+        <rect x="432" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-01-31</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.84s forwards;">
-        <rect x="448" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-02-01</title></rect>
-        <rect x="448" y="16" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>6 contributions on 2026-02-02</title></rect>
-        <rect x="448" y="32" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-02-03</title></rect>
-        <rect x="448" y="48" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>9 contributions on 2026-02-04</title></rect>
-        <rect x="448" y="64" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>5 contributions on 2026-02-05</title></rect>
-        <rect x="448" y="80" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>1 contributions on 2026-02-06</title></rect>
-        <rect x="448" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-02-07</title></rect>
+        <rect x="448" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-02-01</title></rect>
+        <rect x="448" y="16" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>6 contributions on 2026-02-02</title></rect>
+        <rect x="448" y="32" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-02-03</title></rect>
+        <rect x="448" y="48" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>9 contributions on 2026-02-04</title></rect>
+        <rect x="448" y="64" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>5 contributions on 2026-02-05</title></rect>
+        <rect x="448" y="80" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>1 contributions on 2026-02-06</title></rect>
+        <rect x="448" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-02-07</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.87s forwards;">
-        <rect x="464" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-02-08</title></rect>
-        <rect x="464" y="16" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-02-09</title></rect>
-        <rect x="464" y="32" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>8 contributions on 2026-02-10</title></rect>
-        <rect x="464" y="48" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>4 contributions on 2026-02-11</title></rect>
-        <rect x="464" y="64" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-02-12</title></rect>
-        <rect x="464" y="80" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>7 contributions on 2026-02-13</title></rect>
-        <rect x="464" y="96" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>1 contributions on 2026-02-14</title></rect>
+        <rect x="464" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-02-08</title></rect>
+        <rect x="464" y="16" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-02-09</title></rect>
+        <rect x="464" y="32" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>8 contributions on 2026-02-10</title></rect>
+        <rect x="464" y="48" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>4 contributions on 2026-02-11</title></rect>
+        <rect x="464" y="64" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-02-12</title></rect>
+        <rect x="464" y="80" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>7 contributions on 2026-02-13</title></rect>
+        <rect x="464" y="96" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>1 contributions on 2026-02-14</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.8999999999999999s forwards;">
-        <rect x="480" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-02-15</title></rect>
-        <rect x="480" y="16" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>7 contributions on 2026-02-16</title></rect>
-        <rect x="480" y="32" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>3 contributions on 2026-02-17</title></rect>
-        <rect x="480" y="48" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-02-18</title></rect>
-        <rect x="480" y="64" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>6 contributions on 2026-02-19</title></rect>
-        <rect x="480" y="80" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>2 contributions on 2026-02-20</title></rect>
-        <rect x="480" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-02-21</title></rect>
+        <rect x="480" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-02-15</title></rect>
+        <rect x="480" y="16" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>7 contributions on 2026-02-16</title></rect>
+        <rect x="480" y="32" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>3 contributions on 2026-02-17</title></rect>
+        <rect x="480" y="48" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-02-18</title></rect>
+        <rect x="480" y="64" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>6 contributions on 2026-02-19</title></rect>
+        <rect x="480" y="80" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>2 contributions on 2026-02-20</title></rect>
+        <rect x="480" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-02-21</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.9299999999999999s forwards;">
-        <rect x="496" y="0" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>2 contributions on 2026-02-22</title></rect>
-        <rect x="496" y="16" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>2 contributions on 2026-02-23</title></rect>
-        <rect x="496" y="32" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-02-24</title></rect>
-        <rect x="496" y="48" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>5 contributions on 2026-02-25</title></rect>
-        <rect x="496" y="64" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>1 contributions on 2026-02-26</title></rect>
-        <rect x="496" y="80" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>8 contributions on 2026-02-27</title></rect>
-        <rect x="496" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-02-28</title></rect>
+        <rect x="496" y="0" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>2 contributions on 2026-02-22</title></rect>
+        <rect x="496" y="16" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>2 contributions on 2026-02-23</title></rect>
+        <rect x="496" y="32" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-02-24</title></rect>
+        <rect x="496" y="48" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>5 contributions on 2026-02-25</title></rect>
+        <rect x="496" y="64" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>1 contributions on 2026-02-26</title></rect>
+        <rect x="496" y="80" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>8 contributions on 2026-02-27</title></rect>
+        <rect x="496" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-02-28</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.96s forwards;">
-        <rect x="512" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-03-01</title></rect>
-        <rect x="512" y="16" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-03-02</title></rect>
-        <rect x="512" y="32" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>4 contributions on 2026-03-03</title></rect>
-        <rect x="512" y="48" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>11 contributions on 2026-03-04</title></rect>
-        <rect x="512" y="64" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-03-05</title></rect>
-        <rect x="512" y="80" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>3 contributions on 2026-03-06</title></rect>
-        <rect x="512" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-03-07</title></rect>
+        <rect x="512" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-03-01</title></rect>
+        <rect x="512" y="16" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-03-02</title></rect>
+        <rect x="512" y="32" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>4 contributions on 2026-03-03</title></rect>
+        <rect x="512" y="48" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>11 contributions on 2026-03-04</title></rect>
+        <rect x="512" y="64" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-03-05</title></rect>
+        <rect x="512" y="80" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>3 contributions on 2026-03-06</title></rect>
+        <rect x="512" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-03-07</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 0.99s forwards;">
-        <rect x="528" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-03-08</title></rect>
-        <rect x="528" y="16" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>3 contributions on 2026-03-09</title></rect>
-        <rect x="528" y="32" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>10 contributions on 2026-03-10</title></rect>
-        <rect x="528" y="48" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-03-11</title></rect>
-        <rect x="528" y="64" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>2 contributions on 2026-03-12</title></rect>
-        <rect x="528" y="80" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>9 contributions on 2026-03-13</title></rect>
-        <rect x="528" y="96" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>2 contributions on 2026-03-14</title></rect>
+        <rect x="528" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-03-08</title></rect>
+        <rect x="528" y="16" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>3 contributions on 2026-03-09</title></rect>
+        <rect x="528" y="32" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>10 contributions on 2026-03-10</title></rect>
+        <rect x="528" y="48" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-03-11</title></rect>
+        <rect x="528" y="64" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>2 contributions on 2026-03-12</title></rect>
+        <rect x="528" y="80" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>9 contributions on 2026-03-13</title></rect>
+        <rect x="528" y="96" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>2 contributions on 2026-03-14</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 1.02s forwards;">
-        <rect x="544" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-03-15</title></rect>
-        <rect x="544" y="16" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>9 contributions on 2026-03-16</title></rect>
-        <rect x="544" y="32" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-03-17</title></rect>
-        <rect x="544" y="48" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>1 contributions on 2026-03-18</title></rect>
-        <rect x="544" y="64" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>8 contributions on 2026-03-19</title></rect>
-        <rect x="544" y="80" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>4 contributions on 2026-03-20</title></rect>
-        <rect x="544" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-03-21</title></rect>
+        <rect x="544" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-03-15</title></rect>
+        <rect x="544" y="16" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>9 contributions on 2026-03-16</title></rect>
+        <rect x="544" y="32" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-03-17</title></rect>
+        <rect x="544" y="48" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>1 contributions on 2026-03-18</title></rect>
+        <rect x="544" y="64" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>8 contributions on 2026-03-19</title></rect>
+        <rect x="544" y="80" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>4 contributions on 2026-03-20</title></rect>
+        <rect x="544" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-03-21</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 1.05s forwards;">
-        <rect x="560" y="0" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>3 contributions on 2026-03-22</title></rect>
-        <rect x="560" y="16" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-03-23</title></rect>
-        <rect x="560" y="32" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>11 contributions on 2026-03-24</title></rect>
-        <rect x="560" y="48" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>7 contributions on 2026-03-25</title></rect>
-        <rect x="560" y="64" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-03-26</title></rect>
-        <rect x="560" y="80" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>10 contributions on 2026-03-27</title></rect>
-        <rect x="560" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-03-28</title></rect>
+        <rect x="560" y="0" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>3 contributions on 2026-03-22</title></rect>
+        <rect x="560" y="16" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-03-23</title></rect>
+        <rect x="560" y="32" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>11 contributions on 2026-03-24</title></rect>
+        <rect x="560" y="48" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>7 contributions on 2026-03-25</title></rect>
+        <rect x="560" y="64" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-03-26</title></rect>
+        <rect x="560" y="80" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>10 contributions on 2026-03-27</title></rect>
+        <rect x="560" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-03-28</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 1.08s forwards;">
-        <rect x="576" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-03-29</title></rect>
-        <rect x="576" y="16" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>10 contributions on 2026-03-30</title></rect>
-        <rect x="576" y="32" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>6 contributions on 2026-03-31</title></rect>
-        <rect x="576" y="48" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-04-01</title></rect>
-        <rect x="576" y="64" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>9 contributions on 2026-04-02</title></rect>
-        <rect x="576" y="80" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>5 contributions on 2026-04-03</title></rect>
-        <rect x="576" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-04-04</title></rect>
+        <rect x="576" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-03-29</title></rect>
+        <rect x="576" y="16" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>10 contributions on 2026-03-30</title></rect>
+        <rect x="576" y="32" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>6 contributions on 2026-03-31</title></rect>
+        <rect x="576" y="48" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-04-01</title></rect>
+        <rect x="576" y="64" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>9 contributions on 2026-04-02</title></rect>
+        <rect x="576" y="80" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>5 contributions on 2026-04-03</title></rect>
+        <rect x="576" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-04-04</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 1.1099999999999999s forwards;">
-        <rect x="592" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-04-05</title></rect>
-        <rect x="592" y="16" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>5 contributions on 2026-04-06</title></rect>
-        <rect x="592" y="32" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-04-07</title></rect>
-        <rect x="592" y="48" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>8 contributions on 2026-04-08</title></rect>
-        <rect x="592" y="64" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>4 contributions on 2026-04-09</title></rect>
-        <rect x="592" y="80" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>11 contributions on 2026-04-10</title></rect>
-        <rect x="592" y="96" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>3 contributions on 2026-04-11</title></rect>
+        <rect x="592" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-04-05</title></rect>
+        <rect x="592" y="16" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>5 contributions on 2026-04-06</title></rect>
+        <rect x="592" y="32" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-04-07</title></rect>
+        <rect x="592" y="48" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>8 contributions on 2026-04-08</title></rect>
+        <rect x="592" y="64" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>4 contributions on 2026-04-09</title></rect>
+        <rect x="592" y="80" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>11 contributions on 2026-04-10</title></rect>
+        <rect x="592" y="96" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>3 contributions on 2026-04-11</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 1.14s forwards;">
-        <rect x="608" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-04-12</title></rect>
-        <rect x="608" y="16" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-04-13</title></rect>
-        <rect x="608" y="32" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>7 contributions on 2026-04-14</title></rect>
-        <rect x="608" y="48" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>3 contributions on 2026-04-15</title></rect>
-        <rect x="608" y="64" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-04-16</title></rect>
-        <rect x="608" y="80" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>6 contributions on 2026-04-17</title></rect>
-        <rect x="608" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-04-18</title></rect>
+        <rect x="608" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-04-12</title></rect>
+        <rect x="608" y="16" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-04-13</title></rect>
+        <rect x="608" y="32" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>7 contributions on 2026-04-14</title></rect>
+        <rect x="608" y="48" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>3 contributions on 2026-04-15</title></rect>
+        <rect x="608" y="64" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-04-16</title></rect>
+        <rect x="608" y="80" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>6 contributions on 2026-04-17</title></rect>
+        <rect x="608" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-04-18</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 1.17s forwards;">
-        <rect x="624" y="0" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>4 contributions on 2026-04-19</title></rect>
-        <rect x="624" y="16" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>6 contributions on 2026-04-20</title></rect>
-        <rect x="624" y="32" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>2 contributions on 2026-04-21</title></rect>
-        <rect x="624" y="48" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-04-22</title></rect>
-        <rect x="624" y="64" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>5 contributions on 2026-04-23</title></rect>
-        <rect x="624" y="80" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>1 contributions on 2026-04-24</title></rect>
-        <rect x="624" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-04-25</title></rect>
+        <rect x="624" y="0" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>4 contributions on 2026-04-19</title></rect>
+        <rect x="624" y="16" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>6 contributions on 2026-04-20</title></rect>
+        <rect x="624" y="32" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>2 contributions on 2026-04-21</title></rect>
+        <rect x="624" y="48" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-04-22</title></rect>
+        <rect x="624" y="64" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>5 contributions on 2026-04-23</title></rect>
+        <rect x="624" y="80" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>1 contributions on 2026-04-24</title></rect>
+        <rect x="624" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-04-25</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 1.2s forwards;">
-        <rect x="640" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-04-26</title></rect>
-        <rect x="640" y="16" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>1 contributions on 2026-04-27</title></rect>
-        <rect x="640" y="32" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-04-28</title></rect>
-        <rect x="640" y="48" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>4 contributions on 2026-04-29</title></rect>
-        <rect x="640" y="64" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>11 contributions on 2026-04-30</title></rect>
-        <rect x="640" y="80" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>7 contributions on 2026-05-01</title></rect>
-        <rect x="640" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-05-02</title></rect>
+        <rect x="640" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-04-26</title></rect>
+        <rect x="640" y="16" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>1 contributions on 2026-04-27</title></rect>
+        <rect x="640" y="32" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-04-28</title></rect>
+        <rect x="640" y="48" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>4 contributions on 2026-04-29</title></rect>
+        <rect x="640" y="64" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>11 contributions on 2026-04-30</title></rect>
+        <rect x="640" y="80" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>7 contributions on 2026-05-01</title></rect>
+        <rect x="640" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-05-02</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 1.23s forwards;">
-        <rect x="656" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-05-03</title></rect>
-        <rect x="656" y="16" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-05-04</title></rect>
-        <rect x="656" y="32" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>3 contributions on 2026-05-05</title></rect>
-        <rect x="656" y="48" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>10 contributions on 2026-05-06</title></rect>
-        <rect x="656" y="64" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-05-07</title></rect>
-        <rect x="656" y="80" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>2 contributions on 2026-05-08</title></rect>
-        <rect x="656" y="96" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>4 contributions on 2026-05-09</title></rect>
+        <rect x="656" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-05-03</title></rect>
+        <rect x="656" y="16" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-05-04</title></rect>
+        <rect x="656" y="32" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>3 contributions on 2026-05-05</title></rect>
+        <rect x="656" y="48" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>10 contributions on 2026-05-06</title></rect>
+        <rect x="656" y="64" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-05-07</title></rect>
+        <rect x="656" y="80" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>2 contributions on 2026-05-08</title></rect>
+        <rect x="656" y="96" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>4 contributions on 2026-05-09</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 1.26s forwards;">
-        <rect x="672" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-05-10</title></rect>
-        <rect x="672" y="16" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>2 contributions on 2026-05-11</title></rect>
-        <rect x="672" y="32" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>9 contributions on 2026-05-12</title></rect>
-        <rect x="672" y="48" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-05-13</title></rect>
-        <rect x="672" y="64" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>1 contributions on 2026-05-14</title></rect>
-        <rect x="672" y="80" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>8 contributions on 2026-05-15</title></rect>
-        <rect x="672" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-05-16</title></rect>
+        <rect x="672" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-05-10</title></rect>
+        <rect x="672" y="16" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>2 contributions on 2026-05-11</title></rect>
+        <rect x="672" y="32" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>9 contributions on 2026-05-12</title></rect>
+        <rect x="672" y="48" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-05-13</title></rect>
+        <rect x="672" y="64" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>1 contributions on 2026-05-14</title></rect>
+        <rect x="672" y="80" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>8 contributions on 2026-05-15</title></rect>
+        <rect x="672" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-05-16</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 1.29s forwards;">
-        <rect x="688" y="0" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>5 contributions on 2026-05-17</title></rect>
-        <rect x="688" y="16" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>8 contributions on 2026-05-18</title></rect>
-        <rect x="688" y="32" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-05-19</title></rect>
-        <rect x="688" y="48" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>11 contributions on 2026-05-20</title></rect>
-        <rect x="688" y="64" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>7 contributions on 2026-05-21</title></rect>
-        <rect x="688" y="80" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>3 contributions on 2026-05-22</title></rect>
-        <rect x="688" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-05-23</title></rect>
+        <rect x="688" y="0" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>5 contributions on 2026-05-17</title></rect>
+        <rect x="688" y="16" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>8 contributions on 2026-05-18</title></rect>
+        <rect x="688" y="32" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-05-19</title></rect>
+        <rect x="688" y="48" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>11 contributions on 2026-05-20</title></rect>
+        <rect x="688" y="64" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>7 contributions on 2026-05-21</title></rect>
+        <rect x="688" y="80" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>3 contributions on 2026-05-22</title></rect>
+        <rect x="688" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-05-23</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 1.3199999999999998s forwards;">
-        <rect x="704" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-05-24</title></rect>
-        <rect x="704" y="16" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-05-25</title></rect>
-        <rect x="704" y="32" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>10 contributions on 2026-05-26</title></rect>
-        <rect x="704" y="48" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>6 contributions on 2026-05-27</title></rect>
-        <rect x="704" y="64" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-05-28</title></rect>
-        <rect x="704" y="80" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>9 contributions on 2026-05-29</title></rect>
-        <rect x="704" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-05-30</title></rect>
+        <rect x="704" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-05-24</title></rect>
+        <rect x="704" y="16" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-05-25</title></rect>
+        <rect x="704" y="32" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>10 contributions on 2026-05-26</title></rect>
+        <rect x="704" y="48" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>6 contributions on 2026-05-27</title></rect>
+        <rect x="704" y="64" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-05-28</title></rect>
+        <rect x="704" y="80" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>9 contributions on 2026-05-29</title></rect>
+        <rect x="704" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-05-30</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 1.3499999999999999s forwards;">
-        <rect x="720" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-05-31</title></rect>
-        <rect x="720" y="16" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>9 contributions on 2026-06-01</title></rect>
-        <rect x="720" y="32" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>5 contributions on 2026-06-02</title></rect>
-        <rect x="720" y="48" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-06-03</title></rect>
-        <rect x="720" y="64" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>8 contributions on 2026-06-04</title></rect>
-        <rect x="720" y="80" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>4 contributions on 2026-06-05</title></rect>
-        <rect x="720" y="96" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>5 contributions on 2026-06-06</title></rect>
+        <rect x="720" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-05-31</title></rect>
+        <rect x="720" y="16" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>9 contributions on 2026-06-01</title></rect>
+        <rect x="720" y="32" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>5 contributions on 2026-06-02</title></rect>
+        <rect x="720" y="48" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-06-03</title></rect>
+        <rect x="720" y="64" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>8 contributions on 2026-06-04</title></rect>
+        <rect x="720" y="80" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>4 contributions on 2026-06-05</title></rect>
+        <rect x="720" y="96" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>5 contributions on 2026-06-06</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 1.38s forwards;">
-        <rect x="736" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-06-07</title></rect>
-        <rect x="736" y="16" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>4 contributions on 2026-06-08</title></rect>
-        <rect x="736" y="32" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-06-09</title></rect>
-        <rect x="736" y="48" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>7 contributions on 2026-06-10</title></rect>
-        <rect x="736" y="64" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>3 contributions on 2026-06-11</title></rect>
-        <rect x="736" y="80" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>10 contributions on 2026-06-12</title></rect>
-        <rect x="736" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-06-13</title></rect>
+        <rect x="736" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-06-07</title></rect>
+        <rect x="736" y="16" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>4 contributions on 2026-06-08</title></rect>
+        <rect x="736" y="32" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-06-09</title></rect>
+        <rect x="736" y="48" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>7 contributions on 2026-06-10</title></rect>
+        <rect x="736" y="64" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>3 contributions on 2026-06-11</title></rect>
+        <rect x="736" y="80" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>10 contributions on 2026-06-12</title></rect>
+        <rect x="736" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-06-13</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 1.41s forwards;">
-        <rect x="752" y="0" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>1 contributions on 2026-06-14</title></rect>
-        <rect x="752" y="16" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-06-15</title></rect>
-        <rect x="752" y="32" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>6 contributions on 2026-06-16</title></rect>
-        <rect x="752" y="48" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>2 contributions on 2026-06-17</title></rect>
-        <rect x="752" y="64" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-06-18</title></rect>
-        <rect x="752" y="80" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>5 contributions on 2026-06-19</title></rect>
-        <rect x="752" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-06-20</title></rect>
+        <rect x="752" y="0" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>1 contributions on 2026-06-14</title></rect>
+        <rect x="752" y="16" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-06-15</title></rect>
+        <rect x="752" y="32" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>6 contributions on 2026-06-16</title></rect>
+        <rect x="752" y="48" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>2 contributions on 2026-06-17</title></rect>
+        <rect x="752" y="64" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-06-18</title></rect>
+        <rect x="752" y="80" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>5 contributions on 2026-06-19</title></rect>
+        <rect x="752" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-06-20</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 1.44s forwards;">
-        <rect x="768" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-06-21</title></rect>
-        <rect x="768" y="16" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>5 contributions on 2026-06-22</title></rect>
-        <rect x="768" y="32" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>1 contributions on 2026-06-23</title></rect>
-        <rect x="768" y="48" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-06-24</title></rect>
-        <rect x="768" y="64" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>4 contributions on 2026-06-25</title></rect>
-        <rect x="768" y="80" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>11 contributions on 2026-06-26</title></rect>
-        <rect x="768" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-06-27</title></rect>
+        <rect x="768" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-06-21</title></rect>
+        <rect x="768" y="16" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>5 contributions on 2026-06-22</title></rect>
+        <rect x="768" y="32" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>1 contributions on 2026-06-23</title></rect>
+        <rect x="768" y="48" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-06-24</title></rect>
+        <rect x="768" y="64" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>4 contributions on 2026-06-25</title></rect>
+        <rect x="768" y="80" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>11 contributions on 2026-06-26</title></rect>
+        <rect x="768" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-06-27</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 1.47s forwards;">
-        <rect x="784" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-06-28</title></rect>
-        <rect x="784" y="16" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>11 contributions on 2026-06-29</title></rect>
-        <rect x="784" y="32" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-06-30</title></rect>
-        <rect x="784" y="48" width="12" height="12" rx="2" ry="2" fill="#1d72b8"><title>3 contributions on 2026-07-01</title></rect>
-        <rect x="784" y="64" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>10 contributions on 2026-07-02</title></rect>
-        <rect x="784" y="80" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>6 contributions on 2026-07-03</title></rect>
-        <rect x="784" y="96" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>1 contributions on 2026-07-04</title></rect>
+        <rect x="784" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-06-28</title></rect>
+        <rect x="784" y="16" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>11 contributions on 2026-06-29</title></rect>
+        <rect x="784" y="32" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-06-30</title></rect>
+        <rect x="784" y="48" width="12" height="12" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)"><title>3 contributions on 2026-07-01</title></rect>
+        <rect x="784" y="64" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>10 contributions on 2026-07-02</title></rect>
+        <rect x="784" y="80" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>6 contributions on 2026-07-03</title></rect>
+        <rect x="784" y="96" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>1 contributions on 2026-07-04</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 1.5s forwards;">
-        <rect x="800" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-07-05</title></rect>
-        <rect x="800" y="16" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-07-06</title></rect>
-        <rect x="800" y="32" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>2 contributions on 2026-07-07</title></rect>
-        <rect x="800" y="48" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>9 contributions on 2026-07-08</title></rect>
-        <rect x="800" y="64" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-07-09</title></rect>
-        <rect x="800" y="80" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>1 contributions on 2026-07-10</title></rect>
-        <rect x="800" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-07-11</title></rect>
+        <rect x="800" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-07-05</title></rect>
+        <rect x="800" y="16" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-07-06</title></rect>
+        <rect x="800" y="32" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>2 contributions on 2026-07-07</title></rect>
+        <rect x="800" y="48" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>9 contributions on 2026-07-08</title></rect>
+        <rect x="800" y="64" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-07-09</title></rect>
+        <rect x="800" y="80" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>1 contributions on 2026-07-10</title></rect>
+        <rect x="800" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-07-11</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 1.53s forwards;">
-        <rect x="816" y="0" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>2 contributions on 2026-07-12</title></rect>
-        <rect x="816" y="16" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>1 contributions on 2026-07-13</title></rect>
-        <rect x="816" y="32" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>8 contributions on 2026-07-14</title></rect>
-        <rect x="816" y="48" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-07-15</title></rect>
-        <rect x="816" y="64" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>11 contributions on 2026-07-16</title></rect>
-        <rect x="816" y="80" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>7 contributions on 2026-07-17</title></rect>
-        <rect x="816" y="96" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-07-18</title></rect>
+        <rect x="816" y="0" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>2 contributions on 2026-07-12</title></rect>
+        <rect x="816" y="16" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>1 contributions on 2026-07-13</title></rect>
+        <rect x="816" y="32" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>8 contributions on 2026-07-14</title></rect>
+        <rect x="816" y="48" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-07-15</title></rect>
+        <rect x="816" y="64" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>11 contributions on 2026-07-16</title></rect>
+        <rect x="816" y="80" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>7 contributions on 2026-07-17</title></rect>
+        <rect x="816" y="96" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-07-18</title></rect>
       </g>
       <g opacity="0" style="animation: fadeInWave 0.4s ease-out 1.56s forwards;">
-        <rect x="832" y="0" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-07-19</title></rect>
-        <rect x="832" y="16" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>7 contributions on 2026-07-20</title></rect>
-        <rect x="832" y="32" width="12" height="12" rx="2" ry="2" fill="#1e293b"><title>0 contributions on 2026-07-21</title></rect>
-        <rect x="832" y="48" width="12" height="12" rx="2" ry="2" fill="#7dd3fc"><title>10 contributions on 2026-07-22</title></rect>
-        <rect x="832" y="64" width="12" height="12" rx="2" ry="2" fill="#38bdf8"><title>6 contributions on 2026-07-23</title></rect>
-        <rect x="832" y="80" width="12" height="12" rx="2" ry="2" fill="#0f4c81"><title>2 contributions on 2026-07-24</title></rect>
+        <rect x="832" y="0" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-07-19</title></rect>
+        <rect x="832" y="16" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>7 contributions on 2026-07-20</title></rect>
+        <rect x="832" y="32" width="12" height="12" rx="1" ry="1" fill="#0b0914"><title>0 contributions on 2026-07-21</title></rect>
+        <rect x="832" y="48" width="12" height="12" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)"><title>10 contributions on 2026-07-22</title></rect>
+        <rect x="832" y="64" width="12" height="12" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)"><title>6 contributions on 2026-07-23</title></rect>
+        <rect x="832" y="80" width="12" height="12" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)"><title>2 contributions on 2026-07-24</title></rect>
       </g>
     </g>
-    <g transform="translate(24, 133)">
-      <text x="0" y="0" class="text-font">Total: <tspan class="text-bold">1241</tspan></text>
-      <text x="120" y="0" class="text-font">Streak: <tspan class="text-bold">3 days</tspan></text>
-      <text x="260" y="0" class="text-font">Longest: <tspan class="text-bold">4 days</tspan></text>
+    <g transform="translate(26, 133)">
+      <text x="0" y="0" class="text-font">TOTAL &gt; <tspan class="text-bold">1241</tspan></text>
+      <text x="120" y="0" class="text-font">STREAK &gt; <tspan class="text-bold">3 DAYS</tspan></text>
+      <text x="260" y="0" class="text-font">PEAK &gt; <tspan class="text-bold">4 DAYS</tspan></text>
       <g transform="translate(754, -10)">
-        <text x="-35" y="10" class="day-label">Less</text>
-        <rect x="0" y="0" width="10" height="10" rx="2" ry="2" fill="#1e293b" />
-        <rect x="14" y="0" width="10" height="10" rx="2" ry="2" fill="#0f4c81" />
-        <rect x="28" y="0" width="10" height="10" rx="2" ry="2" fill="#1d72b8" />
-        <rect x="42" y="0" width="10" height="10" rx="2" ry="2" fill="#38bdf8" />
-        <rect x="56" y="0" width="10" height="10" rx="2" ry="2" fill="#7dd3fc" />
-        <text x="74" y="10" class="day-label">More</text>
+        <text x="-30" y="9" class="day-label">MIN</text>
+        <rect x="0" y="0" width="10" height="10" rx="1" ry="1" fill="#0b0914" />
+        <rect x="14" y="0" width="10" height="10" rx="1" ry="1" fill="#4a00e0" filter="url(#neonGlow)" />
+        <rect x="28" y="0" width="10" height="10" rx="1" ry="1" fill="#8e2de2" filter="url(#neonGlow)" />
+        <rect x="42" y="0" width="10" height="10" rx="1" ry="1" fill="#f000ff" filter="url(#neonGlow)" />
+        <rect x="56" y="0" width="10" height="10" rx="1" ry="1" fill="#00f3ff" filter="url(#neonGlow)" />
+        <text x="74" y="9" class="day-label">MAX</text>
       </g>
     </g>
   </g>
