@@ -1,13 +1,13 @@
 <!-- 
   ╔══════════════════════════════════════════════════════════════╗
-  ║  SETUP: Find & replace  YOUR_USERNAME  and  YOUR_NAME        ║
+  ║  SETUP: Find & replace  thesuraj01  and  Suraj Kumar Yadav        ║
   ║  Save as README.md in a repo named exactly like your username║
   ╚══════════════════════════════════════════════════════════════╝
 -->
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=venom&color=0:0f0c29,50:302b63,100:24c6dc&height=260&section=header&text=YOUR_NAME&fontSize=72&fontColor=ffffff&animation=twinkling&fontAlignY=40&desc=Full-Stack%20%C3%97%20AI%20Systems%20Engineer&descAlignY=62&descSize=22" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=venom&color=0:0f0c29,50:302b63,100:24c6dc&height=260&section=header&text=Suraj Kumar Yadav&fontSize=72&fontColor=ffffff&animation=twinkling&fontAlignY=40&desc=Full-Stack%20%C3%97%20AI%20Systems%20Engineer&descAlignY=62&descSize=22" width="100%"/>
 
 <a href="https://git.io/typing-svg">
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=2800&pause=900&color=24C6DC&center=true&vCenter=true&multiline=false&width=780&lines=%3E+booting+engineer.sys+...+%5BOK%5D;Building+multi-agent+AI+orchestration+platforms;Shipping+secure%2C+distributed%2C+production-grade+systems;Full-Stack+%E2%80%A2+System+Design+%E2%80%A2+AI+Integration;Engineering+the+future+of+payments+%F0%9F%9A%80" alt="Typing SVG" />
@@ -18,7 +18,7 @@
 ![Status](https://img.shields.io/badge/STATUS-ONLINE-00ff9c?style=for-the-badge&labelColor=0d1117)
 ![Experience](https://img.shields.io/badge/EXPERIENCE-1%2B_YEARS_IN_PRODUCTION-24c6dc?style=for-the-badge&labelColor=0d1117)
 ![Mission](https://img.shields.io/badge/MISSION-GOOGLE_PAYMENTS-4285F4?style=for-the-badge&logo=google&logoColor=white&labelColor=0d1117)
-![Profile Views](https://komarev.com/ghpvc/?username=YOUR_USERNAME&style=for-the-badge&color=8a2be2&label=VISITORS&labelColor=0d1117)
+![Profile Views](https://komarev.com/ghpvc/?username=thesuraj01&style=for-the-badge&color=8a2be2&label=VISITORS&labelColor=0d1117)
 
 </div>
 
@@ -29,7 +29,7 @@
 ```python
 class Engineer:
     def __init__(self):
-        self.name        = "YOUR_NAME"
+        self.name        = "Suraj Kumar Yadav"
         self.role        = "Software Engineer · Full-Stack & AI Systems"
         self.experience  = "1+ year shipping to production"
         self.focus       = ["Distributed Systems", "Multi-Agent AI", "Secure Backends"]
@@ -209,16 +209,16 @@ flowchart LR
 
 <div align="center">
 
-<img height="180" src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=24c6dc&icon_color=8a2be2&include_all_commits=true&count_private=true" />
-<img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=24c6dc&langs_count=8" />
+<img height="180" src="https://github-readme-stats.vercel.app/api?username=thesuraj01&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=24c6dc&icon_color=8a2be2&include_all_commits=true&count_private=true" />
+<img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=thesuraj01&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=24c6dc&langs_count=8" />
 
 <br/>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=tokyonight&hide_border=true&background=0d1117&ring=24c6dc&fire=8a2be2&currStreakLabel=24c6dc" height="170"/>
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=thesuraj01&theme=tokyonight&hide_border=true&background=0d1117&ring=24c6dc&fire=8a2be2&currStreakLabel=24c6dc" height="170"/>
 
 <br/><br/>
 
-<img src="https://github-profile-trophy.vercel.app/?username=YOUR_USERNAME&theme=onedark&no-frame=true&no-bg=true&margin-w=12&row=1" />
+<img src="https://github-profile-trophy.vercel.app/?username=thesuraj01&theme=onedark&no-frame=true&no-bg=true&margin-w=12&row=1" />
 
 </div>
 
@@ -228,7 +228,7 @@ flowchart LR
 Add a workflow using [Platane/snk](https://github.com/Platane/snk) to generate the animation, then uncomment:
 
 ```md
-<!-- ![snake](https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_USERNAME/output/github-contribution-grid-snake-dark.svg) -->
+<!-- ![snake](https://raw.githubusercontent.com/thesuraj01/thesuraj01/output/github-contribution-grid-snake-dark.svg) -->
 ```
 
 </details>
@@ -266,8 +266,8 @@ status:        Ready to deploy 🚀
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/YOUR_LINKEDIN)
 [![Email](https://img.shields.io/badge/Email-Transmit-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:YOUR_EMAIL)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Explore-24c6dc?style=for-the-badge&logo=googlechrome&logoColor=white)](https://YOUR_PORTFOLIO)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/YOUR_USERNAME)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Explore-24c6dc?style=for-the-badge&logo=googlechrome&logoColor=white)](https://surajyadav.ai.studio)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/thesuraj01)
 
 <br/>
 
